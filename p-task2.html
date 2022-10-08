@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("#dialog, #d").dialog({
+                autoOpen: false
+            });
+            $("#btn, #b").button().click(function(e){
+                let target = this.id == "btn" ? "#dialog": "#d";
+                if($(target).dialog("isOpen")) {
+                    $(target).dialog('close')
+                }   else{
+                    $(target).dialog('open')
+                }
+            })
+        });
+    </script>
+
+<script>
+    $(function(){
+        $("#dialog4, #d4").dialog({
+            autoOpen: false
+        });
+        $("#btn4, #b4").button().click(function(e){
+            let target = this.id == "btn4" ? "#dialog4": "#d4";
+            if($(target).dialog("isOpen")) {
+                $(target).dialog('close')
+            }   else{
+                $(target).dialog('open')
+            }
+        })
+    });
+</script>
+</head>
+<body>
+    <div id="dialog" title="On/Off">
+        <img src="https://st-print.com.ua/photos/catalog/6832-05-01.jpg" width="200" alt="">
+        <p>Блокнот — невеличка книжка, іноді з відривними листками, призначена для нотування різних подій, адрес, номерів телефонів, усього, що забажає людина. Також буває електронний тип блокнота — це найпростіший текстовий редактор, який можна використовувати як зручний засіб перегляду текстових файлів.</p>
+    </div>
+    <button id="btn">Блокнот</button>
+
+    <div id="dialog4" title="On/Off">
+        <img src="https://babyplus.ua/images/products/MRU-297123.jpg" width="200" alt="">
+        <p>Зошит — один із паперових носіїв інформації, зшиті між собою кілька паперових аркушів, що утворюють тонку книжечку. Зазвичай формат зошиту дорівнює четвертій частині друкарського стандартного аркуша.</p>
+    </div>
+    <button id="btn4">Зошит</button>
+</body>
+</html>
